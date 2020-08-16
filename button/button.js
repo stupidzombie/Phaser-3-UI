@@ -1,4 +1,4 @@
-import Helper from "./helper.js";
+import Helper from "../helper.js";
 
 class Button {
 	/**
@@ -146,7 +146,7 @@ class Button {
 	 */
 	setText(text, textColor, fontFamily) {
 		this.text = this.game.add.text(this.point4.x, this.point4.y, text, {
-			fontSize: (this.height - this.bezel * 2) + 'px',
+			fontSize: ((this.height - this.bezel * 2) * 0.8) + 'px',
 			fill: textColor,
 			fontFamily: fontFamily
 		})
