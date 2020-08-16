@@ -4,14 +4,18 @@ class Button {
 	/**
 	 * An easy way to make a working button that shows both up and down clicks and is very easy to use.
 	 * @param {Phaser.Scene} game 
-	 * @param {Function} clicker 
 	 * @param {string} color Must be of the format '0x123123' 
 	 * @param {Number} height 
 	 * @param {Number} width 
 	 * @param {Number} x 
 	 * @param {Number} y 
+	 * @param {Function} clickAction
+	 * 
+	 * @example
+	 * 
+	 * const pauseButton = new Button(scene, '0xff1234', 500, 100, 0, 100, () => { myGame.pause() } )
 	 */
-	constructor(game, clicker, color, height, width, x, y) {
+	constructor(game, color, width, height, x, y, clickAction) {
 		this.graphics = []
 		this.polygons = []
 		this.polygonGraphicsList = []
@@ -110,17 +114,17 @@ class Button {
 			this.userClicked = false
 			this.hide()
 			this.show(false)
-			clicker()
+			clickAction()
 		}
 		this.gameObject.on('pointerup', this.pointerUpHandler)
 
-		this.pointerUpHandler = () => {
+		this.pointerOutHandler = () => {
 			if (this.userClicked) {
 				this.hide()
 				this.show(false)
 			}
 		}
-		this.gameObject.on('pointerout', this.pointerUpHandler)
+		this.gameObject.on('pointerout', this.pointerOutHandler)
 	}
 
 	/**
@@ -143,6 +147,10 @@ class Button {
 	 * @param {string} text 
 	 * @param {string} textColor must be of the format '#abcd12'
 	 * @param {string} fontFamily css font family value 
+	 * 
+	 * @example
+	 * 
+	 * pauseButton.setText("Pause", "#ff5666", "Roboto")
 	 */
 	setText(text, textColor, fontFamily) {
 		this.text = this.game.add.text(this.point4.x, this.point4.y, text, {
@@ -161,6 +169,10 @@ class Button {
 	/**
 	 * Sets an image for the button
 	 * @param {string} image An image loaded into phaser
+	 * 
+	 * @example
+	 * 
+	 * settingsButton.setImage('Settings Image')
 	 */
 	setImage(image) {
 		const maxWidth = this.gameObject.displayWidth - this.bezel * 2
