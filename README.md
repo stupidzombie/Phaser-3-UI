@@ -5,10 +5,12 @@ This is a UI library for Phaser 3. Since there was nothing really out there that
 Currently we have two controls:
 ## Button
 [Button](button.md)
+
 ![Buttons in Action](buttons.gif)
 
 ## Progress Bar
 [Progress Bar](progressbar.md)
-![Progress Bars](Progress Bar.png)
+
+![Progress Bars](Progress%20Bar.png)
 
 GO CHECK IT OUT NOW!!! At [BlobAttack](https://blobattack.com)
