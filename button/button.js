@@ -4,18 +4,18 @@ class Button {
 	/**
 	 * An easy way to make a working button that shows both up and down clicks and is very easy to use.
 	 * @param {Phaser.Scene} game 
-	 * @param {string} color Must be of the format '0x123123' 
-	 * @param {Number} height 
-	 * @param {Number} width 
 	 * @param {Number} x 
 	 * @param {Number} y 
+	 * @param {Number} width 
+	 * @param {Number} height 
+	 * @param {string} color Must be of the format '0x123123' 
 	 * @param {Function} clickAction
 	 * 
 	 * @example
 	 * 
-	 * const pauseButton = new Button(scene, '0xff1234', 500, 100, 0, 100, () => { myGame.pause() } )
+	 * const pauseButton = new Button(scene, 0, 100, 500, 100, '0xff1234', () => { myGame.pause() } )
 	 */
-	constructor(game, color, width, height, x, y, clickAction) {
+	constructor(game, x, y, width, height, color, clickAction) {
 		this.graphics = []
 		this.polygons = []
 		this.polygonGraphicsList = []
