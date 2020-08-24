@@ -4,7 +4,7 @@
 **Kind**: global class  
 
 * [Button](#Button)
-    * [new Button(game, color, height, width, x, y, clickAction)](#new_Button_new)
+    * [new Button(game, x, y, width, height, color, clickAction)](#new_Button_new)
     * [.hide()](#Button+hide)
     * [.setText(text, textColor, fontFamily)](#Button+setText)
     * [.setImage(image)](#Button+setImage)
@@ -14,23 +14,23 @@
 
 <a name="new_Button_new"></a>
 
-### new Button(game, color, height, width, x, y, clickAction)
+### new Button(game, x, y, width, height, color, clickAction)
 An easy way to make a working button that shows both up and down clicks and is very easy to use.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
 | game | <code>Phaser.Scene</code> |  |
-| color | <code>string</code> | Must be of the format '0x123123' |
-| height | <code>Number</code> |  |
-| width | <code>Number</code> |  |
 | x | <code>Number</code> |  |
 | y | <code>Number</code> |  |
+| width | <code>Number</code> |  |
+| height | <code>Number</code> |  |
+| color | <code>string</code> | Must be of the format '0x123123' |
 | clickAction | <code>function</code> |  |
 
 **Example**  
 ```js
-const pauseButton = new Button(scene, '0xff1234', 500, 100, 0, 100, () => { myGame.pause() } )
+const pauseButton = new Button(scene, 0, 100, 500, 100, '0xff1234', () => { myGame.pause() } )
 ```
 <a name="Button+hide"></a>
 

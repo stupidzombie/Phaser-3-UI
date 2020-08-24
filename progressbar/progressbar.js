@@ -1,4 +1,18 @@
 class ProgressBar {
+	/**
+	 * Create a Progress Bar
+	 * @param {Phaser.Scene} game 
+	 * @param {Number} x 
+	 * @param {Number} y 
+	 * @param {Number} width 
+	 * @param {Number} height 
+	 * @param {Number} maxValue 
+	 * @param {string} borderColor Must be of the format '0x123123'
+	 * @param {string} barColor Must be of the format '0x123123'
+	 * 
+	 * @example 
+	 * const progressBar = new ProgressBar(scene, 100, 100, 400, 50, 2000, '0x000000', '0xeeeeee')
+	 */
 	constructor(game, x, y, width, height, maxValue, borderColor, barColor) {
 		this.game = game
 		this.textX = x
@@ -19,6 +33,13 @@ class ProgressBar {
 
 	}
 
+	/**
+	 * Set the value of the progress bar
+	 * @param {Number} value 
+	 * 
+	 * @example
+	 * progressBar.setValue(500)
+	 */
 	setValue(value) {
 		this.value = value
 		const adjustment = this.height * 0.05
@@ -36,7 +57,7 @@ class ProgressBar {
 	}
 
 	/**
-	 * Sets text for the progress bar
+	 * Set text for the progress bar
 	 * @param {string} text 
 	 * @param {string} textColor must be of the format '#abcd12'
 	 * @param {string} fontFamily css font family value 
