@@ -20,6 +20,7 @@ class ProgressBar {
 	}
 
 	setValue(value) {
+		this.value = value
 		const adjustment = this.height * 0.05
 		const maxWidth = this.width - 2 * adjustment
 		const maxHeight = this.height - 2 * adjustment
@@ -57,12 +58,20 @@ class ProgressBar {
 		this.text.setFill(textColor)
 
 	}
-
+	/**
+	 * 
+	 * @param {Number} x 
+	 * @param {Number} y 
+	 */
 	move(x, y) {
-		this.bar.x = x
-		this.bar.y = y
-		this.borderBar.x = x
-		this.borderBar.y = y
+		this.x = x - this.width / 2
+		this.y = y - this.height / 2
+		this.borderBar.clear()
+		this.borderBar.fillStyle(this.borderColor, 1)
+		this.borderBar.fillRoundedRect(this.x, this.y, this.width, this.height, this.height / 4)
+
+
+		this.setValue(this.value)
 	}
 
 
