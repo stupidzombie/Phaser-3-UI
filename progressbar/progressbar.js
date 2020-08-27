@@ -67,11 +67,15 @@ class ProgressBar {
 	 * progressBar.setText("HP", "#ff5666", "Roboto")
 	 */
 	setText(text, textColor, fontFamily) {
-		this.text = this.game.add.text(this.x, this.y, text, {
-			fontSize: (this.height * 0.7) + 'px',
-			fill: textColor,
-			fontFamily: fontFamily
-		})
+		if (this.text === undefined) {
+			this.text = this.game.add.text(this.x, this.y, text, {
+				fontSize: (this.height * 0.7) + 'px',
+				fill: textColor,
+				fontFamily: fontFamily
+			})
+		} else {
+			this.text.setText(text)
+		}
 		// const textHeight = this.text.displayHeight
 		const textWidth = this.text.displayWidth
 		this.text.x = this.x + this.width / 2 - textWidth / 2
@@ -91,8 +95,20 @@ class ProgressBar {
 		this.borderBar.fillStyle(this.borderColor, 1)
 		this.borderBar.fillRoundedRect(this.x, this.y, this.width, this.height, this.height / 4)
 
+		if (this.text) {
+			this.text.x = this.x + this.width / 2 - this.text.displayWidth / 2
+			this.text.y = this.y + this.height * 0.05
+		}
 
 		this.setValue(this.value)
+	}
+
+	destroy() {
+		this.borderBar.destroy()
+		this.bar.destroy()
+		if(this.text) {
+			this.text.destroy()
+		}
 	}
 
 
