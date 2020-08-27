@@ -7,6 +7,8 @@
     * [new ProgressBar(game, x, y, width, height, maxValue, borderColor, barColor)](#new_ProgressBar_new)
     * [.setValue(value)](#ProgressBar+setValue)
     * [.setText(text, textColor, fontFamily)](#ProgressBar+setText)
+    * [.move(x, y)](#ProgressBar+move)
+    * [.destroy()](#ProgressBar+destroy)
 
 <a name="new_ProgressBar_new"></a>
 
@@ -61,3 +63,21 @@ Set text for the progress bar
 ```js
 progressBar.setText("HP", "#ff5666", "Roboto")
 ```
+<a name="ProgressBar+move"></a>
+
+### progressBar.move(x, y)
+moves progress bar
+
+**Kind**: instance method of [<code>ProgressBar</code>](#ProgressBar)  
+
+| Param | Type |
+| --- | --- |
+| x | <code>Number</code> | 
+| y | <code>Number</code> | 
+
+<a name="ProgressBar+destroy"></a>
+
+### progressBar.destroy()
+destroys progress bar
+
+**Kind**: instance method of [<code>ProgressBar</code>](#ProgressBar)  
