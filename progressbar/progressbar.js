@@ -84,7 +84,7 @@ class ProgressBar {
 
 	}
 	/**
-	 * 
+	 * moves progress bar
 	 * @param {Number} x 
 	 * @param {Number} y 
 	 */
@@ -103,6 +103,9 @@ class ProgressBar {
 		this.setValue(this.value)
 	}
 
+	/**
+	 * destroys progress bar
+	 */
 	destroy() {
 		this.borderBar.destroy()
 		this.bar.destroy()
