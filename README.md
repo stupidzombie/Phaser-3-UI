@@ -13,4 +13,6 @@ Currently we have two controls:
 
 ![Progress Bars](Progress%20Bar.png)
 
+![Progress Bar In Game](progressbar.gif)
+
 GO CHECK IT OUT NOW!!! At [BlobAttack](https://blobattack.com)
