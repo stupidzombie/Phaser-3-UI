@@ -253,6 +253,21 @@ class Button {
 		this.gameObject.off(event, handler)
 	}
 
+	destroy() {
+		this.gameObject.destroy()
+		if (this.text) {
+			this.text.destroy()
+		}
+		if(this.image) {
+			this.image.destroy()
+		}
+		let start = 0
+		while (start < this.polygonGraphicsList.length) {
+			this.polygonGraphicsList[start].graphics.destroy();
+			start = start + 1
+		}
+	}
+
 
 }
 
