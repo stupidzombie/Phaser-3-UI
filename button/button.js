@@ -153,6 +153,9 @@ class Button {
 	 * pauseButton.setText("Pause", "#ff5666", "Roboto")
 	 */
 	setText(text, textColor, fontFamily) {
+		if (this.text) {
+			this.text.destroy()
+		}
 		this.text = this.game.add.text(this.point4.x, this.point4.y, text, {
 			fontSize: ((this.height - this.bezel * 2) * 0.8) + 'px',
 			fill: textColor,
@@ -258,7 +261,7 @@ class Button {
 		if (this.text) {
 			this.text.destroy()
 		}
-		if(this.image) {
+		if (this.image) {
 			this.image.destroy()
 		}
 		let start = 0
