@@ -34,6 +34,15 @@ class ProgressBar {
 	}
 
 	/**
+	 * Set max value for progress bar
+	 * @param {Number} maxValue 
+	 */
+	setMaximumValue(maxValue) {
+		this.maxValue = maxValue
+		this.setValue(this.value)
+	}
+
+	/**
 	 * Set the value of the progress bar
 	 * @param {Number} value 
 	 * 
